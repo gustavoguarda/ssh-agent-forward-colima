@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  ssh-client:
+    build: .
+    volumes:
+      - $SSH_AUTH_SOCK:/ssh-agent
+    environment:
+      SSH_AUTH_SOCK: /ssh-agent
+    stdin_open: true
+    tty: true
